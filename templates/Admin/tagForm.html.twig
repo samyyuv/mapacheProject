@@ -1,0 +1,20 @@
+{% extends 'Admin/home.html.twig' %}
+
+{% block main %}
+	{{ form_start(tagForm) }}
+
+
+	{{ form_label(tagForm, 'Nom du tag') }}
+	{{ form_widget(tagForm.name) }}
+
+	{{ form_label(tagForm, 'Description du tag') }}
+	{{ form_widget(tagForm.description) }}
+
+	{{ form_widget(tagForm.submit) }}
+
+	{{ form_end(tagForm) }}
+
+	<a href="{{ path('adminTagList') }}">
+		<h1>Retourner a la liste des tags</h1>
+	</a>
+{% endblock %}

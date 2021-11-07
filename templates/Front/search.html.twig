@@ -1,0 +1,22 @@
+{% extends 'Front/home.html.twig' %}
+
+{% block main %}
+	<h2>La recherche à partir de :
+		{{ term }}</h2>
+	<br>
+	{% if articles == false %}
+		<h2>Rien ne correspond à votre recherche</h2>
+	{% endif %}
+
+	{% for article in articles %}
+		<h3>{{ article.title }}</h3>
+		<p>{{ article.content }}</p>
+		<h4>{{ article.category.name }}</h4>
+		<h5>{{ article.tag.name }}</h5>
+
+		<hr>
+
+	{% endfor %}
+
+
+{% endblock %}

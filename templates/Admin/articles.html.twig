@@ -1,0 +1,21 @@
+{% extends 'Admin/home.html.twig' %}
+
+{% block main %}
+	{% for article in articles %}
+		<h1>{{ article.title }}</h1>
+		<p>{{ article.content }}</p>
+		<h4>{{ article.date|date("d/m/Y") }}</h4>
+		<h5>{{ article.category.name }}</h5>
+		<h5>{{ article.tag.name }}</h5>
+		<h3>
+			<a href=" {{ path('adminArticleUpdate', {'id': article.id}) }} ">Modifier</a>
+		</h3>
+		<h3>
+			<a href=" {{ path('adminArticleDelete', {'id' : article.id}) }} ">Supprimer</a>
+		</h3>
+	{% endfor %}
+
+	<a href=" {{ path('adminArticleCreate')}} ">
+		<h1>Creer une nouvelle article</h1>
+	</a>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'Admin/home.html.twig' %}
+
+{% block main %}
+	{% for tag in tags %}
+		<h1>{{ tag.name }}</h1>
+		<p>{{ tag.description }}</p>
+		{% for article in tag.articles %}
+
+			<h3>{{ article.title }}</h3>
+
+		{% endfor %}
+		<h3>
+			<a href=" {{ path('adminTagUpdate', {'id': tag.id}) }} ">Modifier</a>
+		</h3>
+		<h3>
+			<a href=" {{ path('adminTagDelete', {'id' : tag.id}) }} ">Supprimer</a>
+		</h3>
+
+	{% endfor %}
+	<a href=" {{ path('adminTagCreate')}} ">
+		<h1>Creer une nouvelle tag</h1>
+	</a>
+{% endblock %}

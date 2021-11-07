@@ -1,0 +1,32 @@
+{% extends 'Admin/home.html.twig' %}
+
+{% block main %}
+	{{ form_start(articleForm) }}
+	<br>
+	{{ form_label(articleForm, "Titre de l'article") }}
+	{{ form_widget(articleForm.title) }}
+
+	<br>
+	{{ form_label(articleForm, "Contenu de l'article") }}
+	{{ form_widget(articleForm.content) }}
+	<br>
+	{{ form_label(articleForm, "Date de l'article") }}
+	{{ form_widget(articleForm.date) }}
+
+	<br>
+	{{ form_label(articleForm, "Category de l'article") }}
+	{{ form_widget(articleForm.category) }}
+
+	<br>
+	{{ form_label(articleForm, "Tag de l'article") }}
+	{{ form_widget(articleForm.tag) }}
+
+	{{ form_widget(articleForm.submit) }}
+
+	{{ form_end(articleForm) }}
+	<br>
+
+	<a href="{{ path('adminArticleList') }}">
+		<h1>Retourner a la liste des articles</h1>
+	</a>
+{% endblock %}

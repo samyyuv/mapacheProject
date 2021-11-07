@@ -1,0 +1,10 @@
+{% extends 'Front/home.html.twig' %}
+
+{% block main %}
+	<h1>{{ article.title }}</h1>
+	<p>{{ article.content }}</p>
+	<h4>{{ article.date|date("d/m/Y") }}</h4>
+	<h5>{{ article.category.name }}</h5>
+	<h5>{{ article.tag.name }}</h5>
+
+{% endblock %}

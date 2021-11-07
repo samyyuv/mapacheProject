@@ -1,0 +1,20 @@
+{% extends 'Admin/home.html.twig' %}
+
+{% block main %}
+	{{ form_start(categoryForm) }}
+
+
+	{{ form_label(categoryForm, 'Nom du categorie') }}
+	{{ form_widget(categoryForm.name) }}
+
+	{{ form_label(categoryForm, 'Description du categorie') }}
+	{{ form_widget(categoryForm.description) }}
+
+	{{ form_widget(categoryForm.submit) }}
+
+	{{ form_end(categoryForm) }}
+
+	<a href="{{ path('adminCategoryList') }}">
+		<h1>Retourner a la liste des categories</h1>
+	</a>
+{% endblock %}
